@@ -13,6 +13,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+mongoose.connect(process.env.MONGODB_URI, {  
+    useNewUrlParser: true,
+    useFindAndModify: false
+  });
+
 // Define API routes here
 
 // Send every other request to the React app
