@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import { Card, Form, Navbar, Button, FormControl } from 'react-bootstrap';
+import { Card, Form, Navbar, Button, FormControl } from 'react-bootstrap';
+import 'react-bootstrap';
 // import { SearchField, onEnter } from "react-search-field";
 // import ResultsCard from '../components/searchBar'
-// import SearchResults from '../pages/searchResults'
+import SearchResults from '../pages/searchResults'
 import axios from "axios";
 
 
@@ -17,24 +18,26 @@ export default function GetBooks(props) {
             url: `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${KEY}`,
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json;charset=UTF-8'
+                'Content-Type': 'application/json;charset=UTF-8',
             }
-                .then(res => {
-                    console.log(res);
-                    let data = res.data;
-                    setBooks(data);
-                })
-        }, [])
+        })
+        .then(response  => {
+            console.log(response.data);
+            let data = response.data.items;
+            setBooks(data);
+        })
 
-    })
+    }, []);
 
     return (
         <React.Fragment>
-            {/* {books.map((book) => <SearchResults
-                key={book.id}
-                title={book.volumeInfo.title}
-            />)} */}
+            {books.map((items) => <SearchResults
+                key={items.id}
+                title={items.volumeInfo.title}
+                info={null}
+            />)}
             <p>test</p>
+            
 
         </React.Fragment>
 
