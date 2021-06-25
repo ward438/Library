@@ -1,25 +1,42 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// const Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-// const transactionSchema = new Schema(
-//   {
-//     name: {
-//       type: String,
-//       trim: true,
-//       required: "Enter a name for transaction"
-//     },
-//     value: {
-//       type: Number,
-//       required: "Enter an amount"
-//     },
-//     date: {
-//       type: Date,
-//       default: Date.now
-//     }
+const bookSchema = new Schema(
+  {
+    authors: {
+      type: String,
+      trim: true,
+     
+    },
+    description: {
+      type: Number,
+     
+    },
+    image: {
+      type: Date,
+      
+    },
+    link: {
+        type: String,        
+    },
+    title: {
+        type: String,
+    }
+
+  }
+);
+// 
+const Books = mongoose.model("Books", bookSchema);
+
+module.exports = Books;
+
+
+// {
+//     authors: ["Suzanne Collins"]
+//     description: "Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature."
+//     image: "http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+//     link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
+//     title: "The Hunger Games"
 //   }
-// );
-// // 
-// const Transaction = mongoose.model("Transaction", transactionSchema);
-
-// module.exports = Transaction;
+  

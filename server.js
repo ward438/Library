@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 
 
@@ -13,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect(process.env.MONGODB_URI, {  
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/library", {  
     useNewUrlParser: true,
     useFindAndModify: false
   });
