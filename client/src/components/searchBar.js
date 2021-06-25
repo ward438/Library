@@ -1,19 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { Card, Form, Navbar, Button, FormControl } from 'react-bootstrap';
-// import { SearchField, onEnter } from "react-search-field";
+// import ReactSearchBox from 'react-search-box';
+// import GetBooks from '../utils/apiCall'
+
+import SearchField from "react-search-field";
+import SearchResults from "../pages/searchResults";
+import GetBooks from "../utils/apiCall";
 
 
 
-export default function ResultsCard() {
+
+export default function SearchBar(props) {
+    const [books, setBooks] = useState([]);
+
+    const onSubmit = ((search) => {
+        console.log(search);
+        GetBooks(search).then(books => {
+            setBooks(books);
+        })
+    })
+
     return <React.Fragment>
-        test apicall.js and callCard.js // text on apiCall.js
-        <Navbar>
-            <Form inline>
-                <FormControl type="text" placeholder="Google Books Search" className="mr-sm-2" />
-                {/* <Button variant="outline-success" href="/searchResults">Search</Button> */}
-                <Button variant="outline-success" href="/searchResults">Search</Button>
-            </Form>
-        </Navbar>
+        <SearchField
+            placeholder="Search..."
+            onEnter={onSubmit}
+            onSearchClick={onSubmit}
+            searchText=""
+            classNames="test-class"
+        />
+
+        {books.map((items) => <SearchResults
+            key={items.id}
+            title={items.volumeInfo.title}
+            info={null}
+        />)}
+
 
 
     </React.Fragment>

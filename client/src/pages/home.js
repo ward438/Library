@@ -3,6 +3,7 @@ import React from "react";
 
 import { Card, Button } from "react-bootstrap";
 import GetBooks from "../utils/apiCall"
+import SearchBar from "../components/searchBar";
 
 export default function Home(props) {
     return (
@@ -12,10 +13,10 @@ export default function Home(props) {
   <Card.Body>
     <Card.Title>Card Title</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+     This is home
     </Card.Text>
-    <Button variant="primary" href={'/searchResults'}>Go somewhere</Button>
+    <SearchBar/>
+    {/* <Button variant="primary" href={'/searchResults'}>Go somewhere</Button> */}
   </Card.Body>
 </Card>
         
