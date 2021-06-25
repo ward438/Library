@@ -1,24 +1,29 @@
 
 import React from "react";
-
-import { Card, Button } from "react-bootstrap";
-import GetBooks from "../utils/apiCall"
+import { Card, Button, Row, Col, Container } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBar from "../components/searchBar";
+import User from '../components/user';
+
 
 export default function Home(props) {
-    return (
-        
-        <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-     This is home
-    </Card.Text>
-    <SearchBar/>
-    {/* <Button variant="primary" href={'/searchResults'}>Go somewhere</Button> */}
-  </Card.Body>
-</Card>
-        
-    )
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Card>
+            <SearchBar />
+          </Card>
+        </Col>      
+        <Col>
+          <User />
+        </Col>
+      </Row>
+      
+    </Container>
+
+
+
+
+  )
 }

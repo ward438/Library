@@ -1,11 +1,9 @@
 import React, { useState, useEffect, Component } from "react";
 import { Card, Form, Navbar, Button, FormControl } from 'react-bootstrap';
-// import ReactSearchBox from 'react-search-box';
-// import GetBooks from '../utils/apiCall'
-
 import SearchField from "react-search-field";
 import SearchResults from "../pages/searchResults";
 import GetBooks from "../utils/apiCall";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -22,7 +20,7 @@ export default function SearchBar(props) {
 
     return <React.Fragment>
         <SearchField
-            placeholder="Search..."
+            placeholder="Google Books Search..."
             onEnter={onSubmit}
             onSearchClick={onSubmit}
             searchText=""
@@ -31,7 +29,10 @@ export default function SearchBar(props) {
 
         {books.map((items) => <SearchResults
             key={items.id}
+            author={items.volumeInfo.authors}
             title={items.volumeInfo.title}
+            description={items.volumeInfo.description}
+            image={items.volumeInfo.imageLinks.smallThumbnail}
             info={null}
         />)}
 
