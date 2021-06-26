@@ -21,13 +21,13 @@ export default function Home(props) {
 
   return (
     <Container>
-      <Row>
-        <Col>
+      <Row className="justify-content-md-center">
+        <Col >
           <Card>
             <SearchBar updateBooksCallback={(book) => updateUserBooks(book)} />
           </Card>
         </Col>
-        <Col>
+        <Col sm={8}>
           <User books={books} />
         </Col>
       </Row>

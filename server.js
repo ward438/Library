@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
 } else {
-  var proxy = require('express-http-proxy');
+  let proxy = require('express-http-proxy');
   app.use('*', proxy('http://localhost:3000', {
     proxyReqPathResolver: function (req, res) {
       return req.url + req.originalUrl

@@ -8,7 +8,7 @@ import AddData from '../utils/addData';
 export default function SearchResults(props) {
     return (
         <React.Fragment>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }} >
                 <Card.Img variant="top" src={props.image} />
                 <Card.Body>
                     <Card.Title>Title: {props.title}</Card.Title>
@@ -16,7 +16,7 @@ export default function SearchResults(props) {
                     <Card.Text>Description: {props.description}</Card.Text>
                 </Card.Body>
             </Card>
-            <Button type="submit" onClick={() => AddData(props) }> add </Button>
+            <Button type="submit" onClick={() => AddData(props)} style={{margin: '2em'}}> Add: {props.title} </Button>
         </React.Fragment>
 
     )
