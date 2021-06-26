@@ -29,10 +29,10 @@ export default function SearchBar(props) {
 
         {books.map((items) => <SearchResults
             key={items.id}
-            author={items.volumeInfo.authors}
-            title={items.volumeInfo.title}
-            description={items.volumeInfo.description}
-            image={items.volumeInfo.imageLinks.smallThumbnail}
+            author={items.volumeInfo?.authors}
+            title={items.volumeInfo?.title}
+            description={items.volumeInfo?.description}
+            image={items.volumeInfo.imageLinks?.smallThumbnail}
             info={null}
         />)}
 

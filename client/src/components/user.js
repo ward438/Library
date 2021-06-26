@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -12,6 +12,7 @@ export default function User(props) {
             <Card.Body>
                 <Card.Title>Username: </Card.Title>
                 <Card.Text>Books: </Card.Text>
+                
                 
             </Card.Body>
         </Card>

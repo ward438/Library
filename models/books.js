@@ -4,24 +4,29 @@ const Schema = mongoose.Schema;
 
 const bookSchema = new Schema(
   {
+    id: {
+      type: String,
+      required: true
+    },
+
     authors: {
       type: String,
       trim: true,
-     
+
     },
     description: {
       type: Number,
-     
+
     },
     image: {
       type: Date,
-      
+
     },
     link: {
-        type: String,        
+      type: String,
     },
     title: {
-        type: String,
+      type: String,
     }
 
   }
@@ -39,4 +44,3 @@ module.exports = Books;
 //     link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
 //     title: "The Hunger Games"
 //   }
-  

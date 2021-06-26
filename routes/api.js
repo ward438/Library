@@ -16,8 +16,16 @@ router.post("/api/Books", ({ body }, res) => {
 
 
 router.get("/api/Books", (req, res) => {
+  Books.find()
+  .then(dbBooks => {
+    res.json(dbBooks);
+  })
+  .cath(err => {
+    res.status(404).json(err);
+  })
+  console.log("get")
 
-    console.log("GET TEST")
+  //   console.log("GET TEST")
   // if (location.host === "http://localhost:3000" || location.hostname === "localhost") {
   //   console.log("apiBooks")
   //   Books.find({}).sort({ date: -1 })
