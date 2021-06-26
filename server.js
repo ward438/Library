@@ -24,10 +24,9 @@ app.use('', require("./routes/api.js"));
 
 if (process.env.NODE_ENV === "production") {
   // Send every other request to the React app
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  // });
-  app.use(express.static('client/build'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 } else {
   let proxy = require('express-http-proxy');
   app.use('*', proxy('http://localhost:3000', {
