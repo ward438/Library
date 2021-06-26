@@ -5,7 +5,7 @@ export default function ReturnBooks(query) {
    
     return axios({
         method: "GET",
-        url: `/api/Books`,
+        url: `/api/books`,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json;charset=UTF-8',
