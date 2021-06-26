@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Books = require("../models/Books.js");
+const Books = require("../models/books.js");
 require('dotenv').config();
 // const mongoose = require('mongoose');
 
