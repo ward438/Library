@@ -27,13 +27,15 @@ export default function SearchBar(props) {
             classNames="test-class"
         />
 
-        {books.map((items) => <SearchResults
-            key={items.id}
-            author={items.volumeInfo?.authors}
-            title={items.volumeInfo?.title}
-            description={items.volumeInfo?.description}
-            image={items.volumeInfo.imageLinks?.smallThumbnail}
+        {books.map((item) => <SearchResults
+            id={item.id}
+            key={item.id}
+            author={item.volumeInfo?.authors}
+            title={item.volumeInfo?.title}
+            description={item.volumeInfo?.description}
+            image={item.volumeInfo.imageLinks?.smallThumbnail}
             info={null}
+            updateBooksCallback={props.updateBooksCallback}
         />)}
 
 

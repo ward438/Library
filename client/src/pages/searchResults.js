@@ -3,7 +3,7 @@ import React from "react";
 import '../utils/apiCall'
 import { Card, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import AddData from '../utils/addData';
 
 export default function SearchResults(props) {
     return (
@@ -16,7 +16,7 @@ export default function SearchResults(props) {
                     <Card.Text>Description: {props.description}</Card.Text>
                 </Card.Body>
             </Card>
-            <Button type="submit"> add </Button>
+            <Button type="submit" onClick={() => AddData(props) }> add </Button>
         </React.Fragment>
 
     )

@@ -14,8 +14,8 @@ export default function GetBooks(query) {
         }
     })
         .then(response => {
-            console.log(response.data);
-            console.log(response.data.items[0].volumeInfo.description);
+            // console.log(response.data);
+            // console.log(response.data.items[0].volumeInfo.description);
             let data = response.data.items;
             return data;
         })
